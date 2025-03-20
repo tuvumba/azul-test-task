@@ -73,7 +73,7 @@ public class BookController {
                             schema = @Schema(implementation = Map.class),
                             examples = @ExampleObject(value = "{\n" +
                                     "  \"authors\": [\n" +
-                                    "    { \"id\": \"1\" }\n" +
+                                    "    { \"id\": 1 }\n" +
                                     "  ],\n" +
                                     "  \"price\": 2020.99,\n" +
                                     "  \"quantity\": 0\n" +

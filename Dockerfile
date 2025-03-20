@@ -1,5 +1,9 @@
-FROM openjdk:21
-VOLUME /tmp
+FROM openjdk:21-slim
+
+WORKDIR /app
+COPY . /app
+RUN chmod +x ./gradlew
+RUN ./gradlew clean build -x test
+
 EXPOSE 8081
-COPY build/libs/azul-test-task-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java", "-jar", "build/libs/azul-test-task-0.0.1-SNAPSHOT.jar"]

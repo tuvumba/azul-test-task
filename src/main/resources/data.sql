@@ -48,6 +48,11 @@ CREATE TABLE book_author (
                              FOREIGN KEY (author_id) REFERENCES author(id) ON DELETE CASCADE
 );
 
+CREATE INDEX idx_book_author_author_id ON book_author(author_id);
+CREATE INDEX idx_book_genre_genre_name ON book_genre(genre_name);
+CREATE INDEX idx_book_quantity ON book(quantity);
+
+
 INSERT INTO users (username, first_name, last_name, email, password, role)
 VALUES ('admin', 'Admin', 'User', 'admin@example.com', 'admin', 'ADMIN');
 

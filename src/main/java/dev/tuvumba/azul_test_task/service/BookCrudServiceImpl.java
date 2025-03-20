@@ -208,7 +208,7 @@ public class BookCrudServiceImpl implements BookCrudService {
                                     throw new IllegalArgumentException("Invalid author format. Expected an object with 'username' and 'displayName'.");
                                 }
 
-                                Long authorId = (Long) authorData.get("id");
+                                Long authorId = ((Number) authorData.get("id")).longValue();
                                 updatedAuthors.add(authorRepository.findById(authorId).orElseThrow(() -> new EntityNotFoundException("Author(s) of the book has not been found. Add them before adding a book.")));
                             }
 

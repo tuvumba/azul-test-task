@@ -5,7 +5,7 @@ This is a test task for Software Intern position at Azul.
 ## How to run? 
 In the main folder, run
 ```
-./gradlew build && docker-compose build && docker-compose up
+ docker-compose up --build
 ```
 The app will be available at port 8081.  
 The documentation will be available at http://localhost:8081/swagger-ui/index.html
